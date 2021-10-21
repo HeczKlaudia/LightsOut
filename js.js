@@ -21,24 +21,39 @@ $(function () {
     let elemID = esemeny.detail;
 
     // Szomszédos elem:
-    if (elemID == 0) {
-      lampaTomb[elemID + 1].setAllapot();
-      lampaTomb[elemID + 3].setAllapot();
-    } else if (elemID == 2) {
-      lampaTomb[elemID + 3].setAllapot();
+    //    if (elemID == 0) {
+    //      lampaTomb[elemID + 1].setAllapot();
+    //      lampaTomb[elemID + 3].setAllapot();
+    //    } else if (elemID == 2) {
+    //      lampaTomb[elemID + 3].setAllapot();
+    //      lampaTomb[elemID - 1].setAllapot();
+    //    } else if (elemID == 3 || elemID == 5) {
+    //      lampaTomb[elemID - 3].setAllapot();
+    //      lampaTomb[elemID + 3].setAllapot();
+    //    } else if (elemID == 6) {
+    //      lampaTomb[elemID - 3].setAllapot();
+    //      lampaTomb[elemID + 1].setAllapot();
+    //    } else if (elemID == 8) {
+    //      lampaTomb[elemID - 3].setAllapot();
+    //      lampaTomb[elemID - 1].setAllapot();
+    //    } else {
+    //      lampaTomb[elemID + 1].setAllapot();
+    //      lampaTomb[elemID - 1].setAllapot();
+    //    }
+
+    let meret = 3;
+
+    if (elemID > meret - 1) {
+      lampaTomb[elemID - meret].setAllapot();
+    }
+    if (elemID < meret * meret - meret) {
+      lampaTomb[elemID + meret].setAllapot();
+    }
+    if (elemID % meret !== 0) {
       lampaTomb[elemID - 1].setAllapot();
-    } else if (elemID == 3 || elemID == 5) {
-      lampaTomb[elemID - 3].setAllapot();
-      lampaTomb[elemID + 3].setAllapot();
-    } else if (elemID == 6) {
-      lampaTomb[elemID - 3].setAllapot();
+    }
+    if (elemID % meret !== meret - 1) {
       lampaTomb[elemID + 1].setAllapot();
-    } else if (elemID == 8) {
-      lampaTomb[elemID - 3].setAllapot();
-      lampaTomb[elemID - 1].setAllapot();
-    } else {
-      lampaTomb[elemID + 1].setAllapot();
-      lampaTomb[elemID - 1].setAllapot();
     }
   });
 });
