@@ -55,5 +55,12 @@ $(function () {
     if (elemID % meret !== meret - 1) {
       lampaTomb[elemID + 1].setAllapot();
     }
+
+    // Nyerés:
+    for (let i = 0; i < lampaTomb.length; i++) {
+      if (lampaTomb[i].setAllapot == true) {
+        console.log("Juhúúú nyertééél! :D");
+      }
+    }
   });
 });
